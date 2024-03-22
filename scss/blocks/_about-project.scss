@@ -1,0 +1,45 @@
+.about-project{
+    margin-top: 33px;
+}
+
+.about-project__text{
+    max-width: 1240px;
+}
+
+.about-project__title{
+    font-family: Jost;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 54px;
+    text-align: left;
+    color: #09301D;    
+    margin: 0;
+    margin-bottom: 24px;
+}
+
+.about-project__parag{
+    font-family: Jost;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    margin: 0;
+    &:not(:last-child){
+        margin-bottom: 24px;
+    }      
+}
+
+.about-project_img{
+    margin: 0 auto;
+}
+
+@media only screen and (max-width: 450px) {
+    .about-project__parag:last-child{
+        display: none;
+    }
+    .about-project__title{
+        font-size: 32px;
+        line-height: 38px;
+    }
+    
+}
