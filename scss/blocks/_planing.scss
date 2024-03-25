@@ -25,15 +25,40 @@
 }
 
 .planing__types-item{
+    position: relative;
+    margin: 0;
+    border: 1px solid #09301D4D;
+    padding: 25px 24px;
+    &:hover{
+        outline: 2px solid #09301DCC;   
+        .two-room{
+            height: 100%;
+        }
+        .three-room{
+            width: -100px;
+        } 
+    }
+}
+
+.planing__types-text{
     font-family: Jost;
     font-size: 24px;
     font-weight: 400;
     line-height: 29px;
     text-align: left;
-    color: #09301D;
+    color: #09301D;    
     margin: 0;
-    border: 1px solid #09301D4D;
-    padding: 25px 24px;
+}
+
+.two-room{
+    transition: 0.5s ease;
+    position: absolute;
+    bottom: 0;
+    left: 40%;
+    display: block;
+    width: 2px;
+    height: 0;
+    background-color: #09301D33;
 }
 
 .planing__cards-list{
@@ -50,13 +75,15 @@
 }
 
 .planing__cards-item{
-    width: 280px;
-    height: 100%;
+    min-width: 280px;
     background-color: #ADADAD1A;
     border-radius: 12px;
-    padding: 20px;
+    padding: 50px;
     &:not(:last-child){
         margin-right: 40px;
+    }
+    &:first-child{
+        margin-left: 30px;
     }
 }
 

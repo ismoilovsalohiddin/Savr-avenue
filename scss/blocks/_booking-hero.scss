@@ -1,7 +1,7 @@
 .booking-hero{
-    height: 100vh;
-    background-color: #09301D;
+    background-color: hsl(151, 68%, 11%);
     margin-top: -132px;
+    margin-bottom: 32px;
 }
 
 .booking-hero__content{
@@ -17,11 +17,40 @@
 }
 
 .booking-hero__img{
+    position: relative;
     width: 800px;
-    height: 400px;
+    height: 540px;
     border-radius: 8px;
-    object-fit: cover;
+    background-image: url('../../img/hero_back.png');
+    background-repeat: no-repeat;
+    background-size: cover;
     margin-right: 32px;
+}
+
+.block-1{
+    position: absolute;
+    left: 300px;
+    top: 285px;
+    width: 230px;
+    height: 257px;
+    transition: 0.5s ease;
+    opacity: 0;
+    &:hover{
+        opacity: 1;
+    }
+}
+
+.block-2{
+    position: absolute;
+    left: 500px;
+    top: 191px;
+    width: 138.5px;
+    height: 167px;
+    transition: 0.5s ease;
+    opacity: 0;
+    &:hover{
+        opacity: 1;
+    }
 }
 
 .booking-hero__title{
@@ -36,7 +65,7 @@
 
 .booking-hero__box{
     width: 200px;
-    height: 400px;
+    height: 540px;
     background-color: #FFFFFF;
     border-radius: 8px;
     padding: 16px;

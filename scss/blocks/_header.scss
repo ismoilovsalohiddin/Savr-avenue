@@ -42,11 +42,11 @@
 
 .header__link{
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 400;
     font-size: 16px;
     line-height: 24px;
     color: #FFFFFF;
-    font-family: 'Jost', serif;
+    font-family: Jost, serif;
 }
 
 .header__btn{
@@ -55,10 +55,10 @@
     justify-content: space-between;
     gap: 10px;
     padding: 11px 24px;
-    border-radius: 10px;
+    border-radius: 4px;
     border: none;
     background-color: #FFFFFF;
-    font-weight: 500;
+    font-weight: 600;
     font-family: 'Jost', serif;
     font-size: 16px;
     line-height: 24px;
@@ -67,7 +67,15 @@
     &:hover{
         background-color: #09301D;
         color: #FFFFFF;
+        .header__btn-img{
+            transform: rotate(20deg);
+            filter: invert(100%);
+        }
     }
+}
+
+.header__btn-img{
+    transition: 0.5s ease;
 }
 
 @media only screen and (max-width: 1140px){
