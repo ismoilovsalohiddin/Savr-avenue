@@ -435,6 +435,7 @@ img {
 }
 
 .hero__container {
+  background-color: #09301D;
   background-image: url("../../img/hero_back.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -592,11 +593,14 @@ img {
 }
 
 @keyframes wiggleWiggle {
-  from {
+  0% {
     transform: scale(1, 1);
   }
-  to {
-    transform: scale(1, 1.4);
+  50% {
+    transform: scale(1.05, 1.05);
+  }
+  100% {
+    transform: scale(1, 1);
   }
 }
 @media only screen and (max-width: 820px) {
