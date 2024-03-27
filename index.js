@@ -49,14 +49,15 @@ slider.addEventListener('mousemove', e => {
   slider.scrollLeft = scrollLeft - walk;
 });
 
-const arrow = document.querySelector('.footer__arrow');
+// footer arrow
 
-arrow.addEventListener('click', () => {
+const footerArrow = document.querySelector('.footer__arrow');
+footerArrow.addEventListener('click', () => {
   window.scrollTo({
     top: 0,
     left: 0,
     behavior: 'smooth'
-  });
+  })
 })
 
 // form
@@ -64,20 +65,24 @@ arrow.addEventListener('click', () => {
 const headerBtn = document.querySelector('.header__btn');
 const modal = document.querySelector('.modal');
 const form = document.querySelector('.modal__form');
+const formConfirm = document.querySelector('.modal__confirm');
 headerBtn.addEventListener('click', () => {
-  modal.classList.toggle('active');
+  modal.classList.toggle('modal--active');
   form.classList.toggle('modal__form--active');
 })
 
 modal.addEventListener('click', (e) => {
   if (!e.target.classList.contains('.modal') && !e.target.closest('.modal__form')) {
-    modal.classList.remove('active');
+    modal.classList.remove('modal--active');
     form.classList.remove('modal__form--active');
+    formConfirm.classList.remove('modal--active');
+    form.classList.remove('form--not-active');
   }
 })
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
-  modal.classList.remove('active');
-  form.classList.remove('modal__form--active');
+  formConfirm.classList.toggle('modal--active');
+  form.classList.toggle('form--not-active');
+  e.target.reset();
 })

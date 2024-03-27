@@ -68,8 +68,8 @@
         background-color: #09301D;
         color: #FFFFFF;
         .header__btn-img{
-            transform: rotate(20deg);
-            filter: invert(100%);
+            transform: rotate(30deg);
+            filter: brightness(0) invert(1);
         }
     }
 }

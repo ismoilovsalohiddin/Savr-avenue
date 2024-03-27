@@ -53,10 +53,9 @@
 .about-project__img-catalog{
     min-width: 850px;
     height: 600px;
-    // object-fit: inherit;
 }
 
-.about__project-ellipse-top{
+.about-project__ellipse-top{
     position: absolute;
     top: 0;
     left: 0;
@@ -68,7 +67,7 @@
     z-index: 2;
 }
 
-.about__project-ellipse-bottom{
+.about-project__ellipse-bottom{
     position: absolute;
     bottom: 0;
     left: 0;
