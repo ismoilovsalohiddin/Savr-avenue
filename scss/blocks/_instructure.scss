@@ -15,6 +15,7 @@
 }
 
 .instructure__list{
+    opacity: 0;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -23,22 +24,22 @@
     align-items: center;
     justify-content: space-between;
     gap: 40px;
-    animation-name: instructure;
-    animation-duration: 0.8s;
-    animation-timing-function: ease-in;
-    animation-iteration-count: 1;
-    animation-delay: 5s;
-    
 }
 
-@keyframes instructure{
-    from{
-        opacity: 0.3;
-        transform: translateY(65px);
+.instructure__on-view{
+    animation: instructure__on-view 1s ease;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes instructure__on-view {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
     }
-    to{
+    100% {
         opacity: 1;
-        transform: translateY(0px);
+        transform: translateY(0);
     }
 }
 
@@ -137,7 +138,7 @@
     }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 450px) {
     .instructure{
         margin-top: 20px;
     }

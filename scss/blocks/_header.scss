@@ -34,7 +34,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    // gap: 40px;
     &:not(:last-child){
         margin-right: 26px;
     }
@@ -76,6 +75,45 @@
 
 .header__btn-img{
     transition: 0.5s ease;
+}
+
+.header__modal{
+    position: absolute;
+    top: 30px;
+    left: 60px;
+    background-color: #ffffffd0;
+    border-radius: 4px;
+    display: none;
+    padding: 15px;
+    box-shadow: 0px 0px 8px 2px #341F0A1A;
+    &.header__modal--active{
+        display: block;
+    }
+}
+
+.header__modal-list{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.header__modal-item{
+    &:not(:last-child){
+        margin-bottom: 5px;
+    }
+}
+
+.header__modal-link{
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #09301D;
+    font-family: Jost, serif;
+    transition: 0.5s ease;
+    &:hover{
+        text-decoration: underline;
+    }
 }
 
 @media only screen and (max-width: 1140px){

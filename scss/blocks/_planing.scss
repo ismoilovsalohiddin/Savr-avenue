@@ -68,9 +68,7 @@
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
-    justify-content: space-between;
-    overflow-x: hidden;
-    overflow-y: hidden;
+    overflow: hidden;
     scroll-behavior: smooth; 
 }
 

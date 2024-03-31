@@ -1,7 +1,22 @@
+const footerForm = document.querySelector('.footer__form');
+const headerBurger = document.querySelector('.header__mobile-btn');
+const headerModal = document.querySelector('.header__modal');
 const slidesContainer = document.getElementById("cards__list");
 const slide = document.querySelector(".planing__cards-item");
 const prevButton = document.getElementById("slide-arrow-prev");
 const nextButton = document.getElementById("slide-arrow-next");
+const headerBtn = document.querySelector('.header__btn');
+const modal = document.querySelector('.modal');
+const form = document.querySelector('.modal__form');
+const formConfirm = document.querySelector('.modal__confirm');
+const instructureList = document.querySelector('.instructure__list')
+const advantagesList = document.querySelector('.advantages__list')
+const heroImg = document.querySelector('.hero__img-savr-avenue')
+const slider = document.querySelector('.about-project__img-list');
+const aboutProjectImg = document.querySelector('.about-project__img-list')
+const footerArrow = document.querySelector('.footer__arrow');
+
+// first slider
 
 nextButton.addEventListener("click", () => {
   const slideWidth = slide.clientWidth;
@@ -21,7 +36,6 @@ prevButton.addEventListener("click", () => {
 
 // second slider
 
-const slider = document.querySelector('.about-project__img-list');
 let isDown = false;
 let startX;
 let scrollLeft;
@@ -32,11 +46,11 @@ slider.addEventListener('mousedown', e => {
   startX = e.pageX - slider.offsetLeft;
   scrollLeft = slider.scrollLeft;
 });
-slider.addEventListener('mouseleave', _ => {
+slider.addEventListener('mouseleave', () => {
   isDown = false;
   slider.classList.remove('active');
 });
-slider.addEventListener('mouseup', _ => {
+slider.addEventListener('mouseup', () => {
   isDown = false;
   slider.classList.remove('active');
 });
@@ -51,7 +65,6 @@ slider.addEventListener('mousemove', e => {
 
 // footer arrow
 
-const footerArrow = document.querySelector('.footer__arrow');
 footerArrow.addEventListener('click', () => {
   window.scrollTo({
     top: 0,
@@ -60,12 +73,23 @@ footerArrow.addEventListener('click', () => {
   })
 })
 
-// form
+// header burger
 
-const headerBtn = document.querySelector('.header__btn');
-const modal = document.querySelector('.modal');
-const form = document.querySelector('.modal__form');
-const formConfirm = document.querySelector('.modal__confirm');
+headerBurger.addEventListener('click', () => {
+  headerModal.classList.toggle('header__modal--active');
+})
+
+// footer form
+
+footerForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  modal.classList.toggle('modal--active');
+  form.classList.toggle('form--not-active');
+  formConfirm.classList.toggle('modal--active');
+})
+
+// modal form
+
 headerBtn.addEventListener('click', () => {
   modal.classList.toggle('modal--active');
   form.classList.toggle('modal__form--active');
@@ -86,3 +110,24 @@ form.addEventListener('submit', (e) => {
   form.classList.toggle('form--not-active');
   e.target.reset();
 })
+
+// animation on view
+
+const onView = (el, className) => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        console.log(entry.target);
+        entry.target.classList.add(className);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+  });
+  observer.observe(el);
+};
+
+onView(heroImg, 'hero__on-view')
+onView(instructureList, 'instructure__on-view')
+onView(advantagesList, 'advantages__on-view')
+onView(aboutProjectImg, 'about-project__on-view')
